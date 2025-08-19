@@ -96,7 +96,7 @@ export const HeroSection = () => {
   useEffect(() => {
     setIsPopupOpen(true);
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.6; // Slow motion effect
+      videoRef.current.playbackRate = 0.6; // Slow motion
     }
   }, []);
 
@@ -113,18 +113,20 @@ export const HeroSection = () => {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover scale-[1.05] z-0"
+        className="absolute inset-0 w-full h-full object-cover sm:object-cover object-center z-0"
       />
+
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/50 z-10" />
 
       {/* Content */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-12 py-20 grid lg:grid-cols-2 items-center min-h-[70vh]">
-        {/* Text Content */}
-        <div className="max-w-xl space-y-8">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-20 grid lg:grid-cols-2 items-center min-h-[70vh]">
+        {/* Left Content */}
+        <div className="max-w-xl space-y-6 sm:space-y-8 text-center sm:text-left mx-auto lg:mx-0">
           {/* Animated Luxury Eyewear Line */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#D4AF37]/40 bg-black/40 backdrop-blur-md mt-6">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-[#D4AF37]/40 bg-black/40 backdrop-blur-md mt-4 sm:mt-6">
             <Sparkles className="w-4 h-4 text-[#D4AF37]" />
-            <span className="text-sm font-medium text-[#D4AF37]">
+            <span className="text-xs sm:text-sm font-medium text-[#D4AF37]">
               <TypeAnimation
                 sequence={[
                   "Luxury Eyewear Collection",
@@ -143,30 +145,23 @@ export const HeroSection = () => {
           </div>
 
           {/* Main Headings */}
-          <h1
-            className="text-6xl lg:text-7xl font-playfair font-bold text-white leading-tight animate-fade-in"
-            style={{ animationDelay: "0.2s" }}
-          >
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold text-white leading-tight animate-fade-in">
             Crafted Elegance
           </h1>
-          <h2 className="text-6xl lg:text-7xl font-playfair font-bold text-[#D4AF37] animate-fade-in"
-            style={{ animationDelay: "0.3s" }}>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold text-[#D4AF37] animate-fade-in">
             Redefining Vision
           </h2>
 
-          <p
-            className="text-lg lg:text-xl text-white/80 max-w-lg animate-fade-in"
-            style={{ animationDelay: "0.4s" }}
-          >
+          <p className="text-base sm:text-lg lg:text-xl text-white/80 max-w-lg mx-auto sm:mx-0 animate-fade-in">
             Elistro brings you international eyewear luxury — where precision,
             innovation, and style meet timeless sophistication.
           </p>
 
-          {/* View New Arrival Button */}
-          <div className="mt-6">
+          {/* Button */}
+          <div className="mt-4 sm:mt-6">
             <Button
               variant="outline"
-              className="luxury-button text-lg px-8 py-3 rounded-xl bg-[#D4AF37] text-black hover:bg-[#D4AF37]/80 transition-all duration-300"
+              className="luxury-button text-sm sm:text-lg px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl bg-[#D4AF37] text-black hover:bg-[#D4AF37]/80 transition-all duration-300"
               onClick={() => setIsPopupOpen(true)}
             >
               View New Arrival
@@ -174,21 +169,21 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        {/* Right Side Empty */}
+        {/* Right Side Empty (Hidden on mobile) */}
         <div className="hidden lg:block"></div>
       </div>
 
-      {/* New Arrival Popup */}
+      {/* Popup */}
       <NewArrivalPopup
         isOpen={isPopupOpen}
         onClose={() => setIsPopupOpen(false)}
       />
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
         <svg
-          width="32"
-          height="48"
+          width="28"
+          height="44"
           viewBox="0 0 32 48"
           className="fill-transparent stroke-white/60"
         >
