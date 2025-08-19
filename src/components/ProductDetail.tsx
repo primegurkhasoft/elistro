@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Star, Shield, Truck, Sun, Glasses, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, Star, Shield, Diamond, Sun, Glasses, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
@@ -7,12 +7,10 @@ interface ProductDetailProps {
   product: {
     id: number | string;
     name: string;
-    price: string | number;
     image: string;
     sideImage: string;
     additionalImages: string[];
     category?: string;
-    priceRange?: string;
     type: 'sunglass' | 'eyeglass';
     material: 'Acetate' | 'TR';
   };
@@ -230,18 +228,9 @@ export const ProductDetail = ({ product, onClose }: ProductDetailProps) => {
                 </div>
                 
                 <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
-                <p className="text-3xl font-bold text-primary mb-6">
-                  {typeof product.price === 'string' ? product.price : `$${product.price}`}
-                </p>
-                
                 <p className="text-muted-foreground leading-relaxed">
                   {product.type === 'sunglass' ? sunglassDescription : eyeglassDescription}
                 </p>
-                {product.priceRange && (
-                  <p className="text-sm text-muted-foreground mt-2">
-                    Price Range: {product.priceRange}
-                  </p>
-                )}
               </div>
 
               {/* Features */}
@@ -276,15 +265,15 @@ export const ProductDetail = ({ product, onClose }: ProductDetailProps) => {
                   </div>
                 </div>
                 <div className="text-center p-4 rounded-lg bg-card">
-                  <Truck className="w-6 h-6 text-primary mx-auto mb-2" />
-                  <div className="text-sm font-medium">Free Shipping</div>
+                  <Diamond className="w-6 h-6 text-primary mx-auto mb-2" />
+                  <div className="text-sm font-medium">Premium Crafted Frames</div>
                 </div>
               </div>
 
               {/* Actions */}
               <div className="space-y-4">
                 <p className="text-sm text-muted-foreground text-center">
-                  Free shipping • 30-day returns • 2-year warranty
+                  “Elistro — Designed for Eyes That Deserve More.”
                 </p>
               </div>
             </div>

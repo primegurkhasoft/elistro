@@ -15,17 +15,7 @@ import {
 export const Footer = () => {
   return (
     <footer className="relative bg-elistro-charcoal border-t border-border/20 overflow-hidden">
-      {/* 3D Background Elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-96 h-96">
-          <Scene3D 
-            className="w-full h-full"
-            eyewearColor="#B8860B"
-            autoRotate={true}
-            enableControls={false}
-          />
-        </div>
-      </div>
+      
       
       {/* Floating Product Images */}
       <div className="absolute top-10 left-10 w-20 h-20 rounded-full overflow-hidden elegant-card p-2 animate-float opacity-20">
