@@ -154,15 +154,15 @@ export const HeroSection = () => {
           </div>
 
           {/* Headings */}
-          <h1 className="text-xl sm:text-3xl lg:text-5xl font-playfair font-bold text-white leading-tight">
+          <h1 className="text-xl sm:text-3xl lg:text-5xl font-playfair font-bold text-white leading-snug sm:leading-tight tracking-tight drop-shadow-md">
             Crafted Elegance
           </h1>
-          <h2 className="text-xl sm:text-3xl lg:text-5xl font-playfair font-bold text-[#D4AF37]">
+          <h2 className="text-xl sm:text-3xl lg:text-5xl font-playfair font-bold text-[#D4AF37] leading-snug sm:leading-tight tracking-tight drop-shadow-md">
             Redefining Vision
           </h2>
 
           {/* Subtext */}
-          <p className="text-sm sm:text-base lg:text-lg text-white/80 max-w-lg mx-auto sm:mx-0">
+          <p className="text-sm sm:text-base lg:text-lg text-white/90 font-medium sm:font-normal max-w-lg mx-auto sm:mx-0 leading-relaxed drop-shadow">
             Elistro brings you international eyewear luxury — where precision,
             innovation, and style meet timeless sophistication.
           </p>
