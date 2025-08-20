@@ -62,7 +62,7 @@ const NewArrivalPopup = ({
                   loop
                   muted
                   playsInline
-                  className="w-full h-40 sm:h-52 object-cover rounded-lg transition-transform duration-500 hover:scale-105"
+                  className="w-full h-auto aspect-video object-cover rounded-lg transition-transform duration-500 hover:scale-105"
                 />
               </div>
             ) : newArrival.image ? (
@@ -70,7 +70,7 @@ const NewArrivalPopup = ({
                 <img
                   src={newArrival.image}
                   alt={newArrival.title}
-                  className="w-full h-40 sm:h-52 object-cover rounded-lg transition-transform duration-500 hover:scale-105"
+                  className="w-full h-auto aspect-video object-cover rounded-lg transition-transform duration-500 hover:scale-105"
                 />
               </div>
             ) : null}
@@ -103,16 +103,16 @@ export const HeroSection = () => {
   useEffect(() => {
     setIsPopupOpen(true);
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.6; // Slow motion
+      videoRef.current.playbackRate = 0.6; // Slow motion background
     }
   }, []);
 
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-[70vh] sm:min-h-[80vh] lg:min-h-screen flex items-center overflow-hidden"
     >
-      {/* Background Video - Responsive */}
+      {/* Background Video */}
       <div className="absolute inset-0 w-full h-full">
         <video
           ref={videoRef}
@@ -129,11 +129,11 @@ export const HeroSection = () => {
       <div className="absolute inset-0 bg-black/50 z-10" />
 
       {/* Content */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-20 grid grid-cols-1 lg:grid-cols-2 items-center min-h-[70vh]">
-        {/* Left Content - Responsive */}
-        <div className="max-w-xl space-y-5 sm:space-y-6 text-center sm:text-left mx-auto lg:mx-0">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12 lg:py-20 grid grid-cols-1 lg:grid-cols-2 items-center min-h-[65vh]">
+        {/* Left Content */}
+        <div className="max-w-xl space-y-4 sm:space-y-6 text-center sm:text-left mx-auto lg:mx-0">
           {/* Animated Text */}
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-[#D4AF37]/40 bg-black/40 backdrop-blur-md mt-4 sm:mt-6">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-[#D4AF37]/40 bg-black/40 backdrop-blur-md mt-2 sm:mt-4">
             <Sparkles className="w-4 h-4 text-[#D4AF37]" />
             <span className="text-xs sm:text-sm font-medium text-[#D4AF37]">
               <TypeAnimation
@@ -154,10 +154,10 @@ export const HeroSection = () => {
           </div>
 
           {/* Headings */}
-          <h1 className="text-2xl sm:text-3xl lg:text-5xl font-playfair font-bold text-white leading-tight">
+          <h1 className="text-xl sm:text-3xl lg:text-5xl font-playfair font-bold text-white leading-tight">
             Crafted Elegance
           </h1>
-          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-playfair font-bold text-[#D4AF37]">
+          <h2 className="text-xl sm:text-3xl lg:text-5xl font-playfair font-bold text-[#D4AF37]">
             Redefining Vision
           </h2>
 
@@ -179,7 +179,7 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        {/* Right Side - Hidden on Mobile */}
+        {/* Right Side - Empty (for future use) */}
         <div className="hidden lg:block"></div>
       </div>
 
@@ -189,11 +189,11 @@ export const HeroSection = () => {
         onClose={() => setIsPopupOpen(false)}
       />
 
-      {/* Scroll Indicator - Responsive */}
-      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
         <svg
-          width="28"
-          height="44"
+          width="24"
+          height="40"
           viewBox="0 0 32 48"
           className="fill-transparent stroke-white/60"
         >
