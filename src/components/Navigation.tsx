@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ElistroLogo } from './ElistroLogo';
-import { ShoppingBag, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,22 +24,26 @@ export const Navigation = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-      isScrolled ? 'glass-effect shadow-elegant' : 'bg-transparent'
-    }`}>
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        isScrolled ? 'glass-effect shadow-elegant' : 'bg-transparent'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-3">
-            <ElistroLogo size={isScrolled ? 32 : 40} className="transition-all duration-300" />
+            <ElistroLogo
+              size={isScrolled ? 32 : 40}
+              className="transition-all duration-300"
+            />
             <h1 className="text-2xl lg:text-3xl font-playfair font-bold text-gradient">
               Elistro
             </h1>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          {/* Desktop Navigation (shifted right) */}
+          <div className="hidden lg:flex items-center space-x-8 ml-auto">
             {navItems.map((item) => (
               <a key={item.name} href={item.href} className="nav-link">
                 {item.name}
@@ -48,17 +52,18 @@ export const Navigation = () => {
           </div>
 
           {/* Cart and Mobile Menu */}
-          <div className="flex items-center space-x-4">
-            
-            
-            {/* Mobile Menu Button */}
+          <div className="flex items-center space-x-4 lg:hidden">
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden text-foreground hover:text-primary"
+              className="text-foreground hover:text-primary"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isMobileMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -68,9 +73,9 @@ export const Navigation = () => {
           <div className="lg:hidden py-4 border-t border-border/50 bg-background/95 backdrop-blur-md">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <a 
-                  key={item.name} 
-                  href={item.href} 
+                <a
+                  key={item.name}
+                  href={item.href}
                   className="nav-link text-center py-2 text-foreground hover:text-primary"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

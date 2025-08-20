@@ -43,12 +43,12 @@ export const ProductShowcase = () => {
             className="space-y-8"
           >
             <div className="space-y-6">
-              <h3 className="text-2xl lg:text-3xl font-light text-muted-foreground">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light text-muted-foreground">
                 Where{" "}
                 <span className="text-gradient font-semibold">Art</span> Meets{" "}
                 <span className="text-gradient font-semibold">Function</span>
               </h3>
-              <p className="text-lg text-white/80 leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-white/80 leading-relaxed">
                 At <span className="text-[#D4AF37] font-medium">Elistro</span>,
                 we believe that eyewear is more than just a functional
                 accessory—it’s a statement of personal style and an extension of
@@ -58,16 +58,15 @@ export const ProductShowcase = () => {
                 <span className="font-medium">beauty</span> and{" "}
                 <span className="font-medium">endurance</span>.
               </p>
-              <p className="text-lg text-white/70 leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-white/70 leading-relaxed">
                 From the initial sketch to the final polish, every pair undergoes
-                our meticulous{" "}
-                process, ensuring that what reaches your hands is{" "}
+                our meticulous process, ensuring that what reaches your hands is{" "}
                 <span className="font-medium">perfection redefined</span>.
               </p>
             </div>
 
             <div className="space-y-4">
-              <h4 className="text-xl font-playfair font-semibold text-white">
+              <h4 className="text-lg sm:text-xl lg:text-2xl font-playfair font-semibold text-white">
                 Our Commitment
               </h4>
               <ul className="space-y-3">
@@ -79,7 +78,7 @@ export const ProductShowcase = () => {
                 ].map((commitment, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-[#D4AF37] rounded-full shadow-glow" />
-                    <span className="text-white/80">{commitment}</span>
+                    <span className="text-base sm:text-lg lg:text-base text-white/80">{commitment}</span>
                   </li>
                 ))}
               </ul>
@@ -88,7 +87,7 @@ export const ProductShowcase = () => {
             <Button
               variant="luxury"
               size="lg"
-              className="mt-6 px-8 py-4 text-lg rounded-xl shadow-elegant"
+              className="mt-6 px-8 py-4 text-base sm:text-lg lg:text-lg rounded-xl shadow-elegant"
             >
               Discover Our Heritage
             </Button>
@@ -127,8 +126,8 @@ export const ProductShowcase = () => {
               className="absolute -top-6 -right-6 bg-black/60 backdrop-blur-md border border-[#D4AF37]/40 rounded-xl p-4 shadow-elegant animate-float"
             >
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#D4AF37]">500+</div>
-                <div className="text-xs text-white/70">Designs</div>
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#D4AF37]">500+</div>
+                <div className="text-sm sm:text-base lg:text-base text-white/70">Designs</div>
               </div>
             </motion.div>
 
@@ -140,8 +139,8 @@ export const ProductShowcase = () => {
               style={{ animationDelay: "2s" }}
             >
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#D4AF37]">100%</div>
-                <div className="text-xs text-white/70">Handcrafted</div>
+                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#D4AF37]">100%</div>
+                <div className="text-sm sm:text-base lg:text-base text-white/70">Handcrafted</div>
               </div>
             </motion.div>
           </motion.div>

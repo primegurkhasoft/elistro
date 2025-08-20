@@ -91,41 +91,9 @@ const Contact = () => {
                 </div>
 
                 <div className="grid gap-6">
-                  <Card className="elegant-card">
-                    <CardContent className="pt-6">
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <MapPin className="w-6 h-6 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold mb-2">Visit Our Showroom</h3>
-                          <p className="text-muted-foreground">
-                            123 Fashion Avenue<br />
-                            Milan, Italy 20121<br />
-                            Europe
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  
 
-                  <Card className="elegant-card">
-                    <CardContent className="pt-6">
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <Phone className="w-6 h-6 text-primary" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold mb-2">Call Us</h3>
-                          <p className="text-muted-foreground">
-                            Sales: +39 02 1234 5678<br />
-                            Support: +39 02 1234 5679<br />
-                            Mon-Fri: 9:00 AM - 6:00 PM CET
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  
 
                   <Card className="elegant-card">
                     <CardContent className="pt-6">

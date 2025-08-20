@@ -5,8 +5,6 @@ import { Scene3D } from './Scene3D';
 import { 
   Instagram, 
   Facebook, 
-  Twitter, 
-  Youtube,
   Mail,
   Phone,
   MapPin,
@@ -15,8 +13,6 @@ import {
 export const Footer = () => {
   return (
     <footer className="relative bg-elistro-charcoal border-t border-border/20 overflow-hidden">
-      
-      
       {/* Floating Product Images */}
       <div className="absolute top-10 left-10 w-20 h-20 rounded-full overflow-hidden elegant-card p-2 animate-float opacity-20">
         <img 
@@ -36,13 +32,11 @@ export const Footer = () => {
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
           {/* Brand Section */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-playfair font-semibold text-gradient">Elistro</h3>
-            <p className="text-white/80 leading-relaxed">
-              Crafting premium eyewear that combines timeless elegance with modern innovation. 
-              See the world through our lens of luxury.
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-playfair font-semibold text-gradient">Elistro</h3>
+            <p className="text-base sm:text-lg lg:text-base text-white/80 leading-relaxed">
+              More than eyewear, Elistro is a symbol of refined living — blending precision, artistry, and style to deliver frames that inspire confidence and redefine luxury worldwide.
             </p>
             <div className="flex items-center space-x-4">
               <Button variant="ghost" size="icon" className="hover:text-[#D4AF37]">
@@ -51,18 +45,13 @@ export const Footer = () => {
               <Button variant="ghost" size="icon" className="hover:text-[#D4AF37]">
                 <Facebook className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="hover:text-[#D4AF37]">
-                <Twitter className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="hover:text-[#D4AF37]">
-                <Youtube className="h-5 w-5" />
-              </Button>
+              
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h4 className="text-lg font-playfair font-semibold text-white">Quick Links</h4>
+            <h4 className="text-base sm:text-lg lg:text-xl font-playfair font-semibold text-white">Quick Links</h4>
             <ul className="space-y-3">
               {[
                 'About Us',
@@ -71,7 +60,7 @@ export const Footer = () => {
                 'Care Instructions'
               ].map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-white/80 hover:text-[#D4AF37] transition-colors">
+                  <a href="#" className="text-base sm:text-lg lg:text-base text-white/80 hover:text-[#D4AF37] transition-colors">
                     {link}
                   </a>
                 </li>
@@ -81,16 +70,15 @@ export const Footer = () => {
 
           {/* Customer Service */}
           <div className="space-y-6">
-            <h4 className="text-lg font-playfair font-semibold text-white">Customer Service</h4>
+            <h4 className="text-base sm:text-lg lg:text-xl font-playfair font-semibold text-white">Customer Service</h4>
             <ul className="space-y-3">
               {[
                 'Contact Us',
-                'Returns & Exchanges',
                 'Size Guide',
                 'FAQ'
               ].map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-white/80 hover:text-[#D4AF37] transition-colors">
+                  <a href="#" className="text-base sm:text-lg lg:text-base text-white/80 hover:text-[#D4AF37] transition-colors">
                     {link}
                   </a>
                 </li>
@@ -100,35 +88,27 @@ export const Footer = () => {
 
           {/* Newsletter */}
           <div className="space-y-6">
-            <h4 className="text-lg font-playfair font-semibold text-white">Stay Connected</h4>
-            <p className="text-white/80 text-sm">
+            <h4 className="text-base sm:text-lg lg:text-xl font-playfair font-semibold text-white">Stay Connected</h4>
+            <p className="text-base sm:text-lg lg:text-base text-white/80">
               hello@elistro.com
             </p>
-            <div className="space-y-3">
-              <Input 
-                placeholder="Enter your email"
-                className="bg-background/50 border-border/50 text-white/80"
-              />
-              <Button className="w-full luxury-button px-8 py-4 text-lg rounded-xl shadow-elegant">
-                Subscribe
-              </Button>
-            </div>
+          
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 mt-8 border-t border-border/20">
-          <p className="text-sm text-white/80">
+          <p className="text-base sm:text-lg lg:text-base text-white/80">
             © 2024 Elistro. All rights reserved.
           </p>
           <div className="flex items-center space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-sm text-white/80 hover:text-[#D4AF37]">
+            <a href="#" className="text-base sm:text-lg lg:text-base text-white/80 hover:text-[#D4AF37]">
               Privacy Policy
             </a>
-            <a href="#" className="text-sm text-white/80 hover:text-[#D4AF37]">
+            <a href="#" className="text-base sm:text-lg lg:text-base text-white/80 hover:text-[#D4AF37]">
               Terms of Service
             </a>
-            <a href="#" className="text-sm text-white/80 hover:text-[#D4AF37]">
+            <a href="#" className="text-base sm:text-lg lg:text-base text-white/80 hover:text-[#D4AF37]">
               Cookies
             </a>
           </div>

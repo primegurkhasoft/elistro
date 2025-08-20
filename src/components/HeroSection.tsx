@@ -43,10 +43,10 @@ const NewArrivalPopup = ({
 
         {/* Header */}
         <div className="text-center mb-5 sm:mb-6">
-          <h2 className="text-xl sm:text-2xl font-playfair font-bold text-[#D4AF37]">
+          <h2 className="text-2xl sm:text-3xl font-playfair font-bold text-[#D4AF37]">
             New Arrival
           </h2>
-          <p className="text-xs sm:text-sm text-white/70 mt-1 sm:mt-2">
+          <p className="text-sm sm:text-base text-white/70 mt-1 sm:mt-2">
             Explore the latest addition to the Elistro Collection
           </p>
         </div>
@@ -77,15 +77,15 @@ const NewArrivalPopup = ({
 
             <div className="flex-1">
               <div className="flex flex-wrap items-center gap-2 mb-2">
-                <span className="text-xs font-medium px-2 py-1 rounded-full bg-[#D4AF37]/20 text-[#D4AF37]">
+                <span className="text-sm font-medium px-2 py-1 rounded-full bg-[#D4AF37]/20 text-[#D4AF37]">
                   {newArrival.type}
                 </span>
-                <span className="text-xs text-white/50">{newArrival.date}</span>
+                <span className="text-sm text-white/50">{newArrival.date}</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-playfair font-semibold text-white">
+              <h3 className="text-xl sm:text-2xl font-playfair font-semibold text-white">
                 {newArrival.title}
               </h3>
-              <p className="text-xs sm:text-sm text-white/70 mt-1">
+              <p className="text-sm sm:text-base text-white/70 mt-1">
                 {newArrival.description}
               </p>
             </div>
@@ -99,6 +99,7 @@ const NewArrivalPopup = ({
 export const HeroSection = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const isSmallScreen = window.innerWidth < 640; // Tailwind's 'sm' breakpoint is 640px
 
   useEffect(() => {
     setIsPopupOpen(true);
@@ -129,13 +130,13 @@ export const HeroSection = () => {
       <div className="absolute inset-0 bg-black/50 z-10" />
 
       {/* Content */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12 lg:py-20 grid grid-cols-1 lg:grid-cols-2 items-center min-h-[65vh]">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-2 sm:px-6 lg:px-12 py-4 sm:py-12 lg:py-20 grid grid-cols-1 lg:grid-cols-2 items-center min-h-[65vh]">
         {/* Left Content */}
-        <div className="max-w-xl space-y-4 sm:space-y-6 text-center sm:text-left mx-auto lg:mx-0">
+        <div className="max-w-md sm:max-w-xl space-y-4 sm:space-y-6 text-center sm:text-left mx-auto lg:mx-0">
           {/* Animated Text */}
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-[#D4AF37]/40 bg-black/40 backdrop-blur-md mt-2 sm:mt-4">
             <Sparkles className="w-4 h-4 text-[#D4AF37]" />
-            <span className="text-xs sm:text-sm font-medium text-[#D4AF37]">
+            <span className="text-sm sm:text-base font-medium text-[#D4AF37]">
               <TypeAnimation
                 sequence={[
                   "Luxury Eyewear Collection",
@@ -154,28 +155,40 @@ export const HeroSection = () => {
           </div>
 
           {/* Headings */}
-          <h1 className="text-xl sm:text-3xl lg:text-5xl font-playfair font-bold text-white leading-snug sm:leading-tight tracking-tight drop-shadow-md">
-            Crafted Elegance
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-white leading-snug sm:leading-tight tracking-tight drop-shadow-md">
+            {isSmallScreen ? "Elegant Craft" : "Crafted Elegance"}
           </h1>
-          <h2 className="text-xl sm:text-3xl lg:text-5xl font-playfair font-bold text-[#D4AF37] leading-snug sm:leading-tight tracking-tight drop-shadow-md">
-            Redefining Vision
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-[#D4AF37] leading-snug sm:leading-tight tracking-tight drop-shadow-md">
+            {isSmallScreen ? "Vision Redefined" : "Redefining Vision"}
           </h2>
 
           {/* Subtext */}
-          <p className="text-sm sm:text-base lg:text-lg text-white/90 font-medium sm:font-normal max-w-lg mx-auto sm:mx-0 leading-relaxed drop-shadow">
-            Elistro brings you international eyewear luxury — where precision,
-            innovation, and style meet timeless sophistication.
+          <p className="text-base sm:text-lg lg:text-lg text-white/90 font-medium sm:font-normal max-w-lg mx-auto sm:mx-0 leading-relaxed drop-shadow">
+            {isSmallScreen
+              ? "Elistro: Luxury eyewear with precision and style."
+              : "Elistro brings you international eyewear luxury — where precision, innovation, and style meet timeless sophistication."}
           </p>
 
-          {/* Button */}
+          {/* Button/Icon */}
           <div className="mt-4 sm:mt-6">
-            <Button
-              variant="outline"
-              className="text-sm sm:text-base lg:text-lg px-5 sm:px-7 lg:px-8 py-2.5 sm:py-3 rounded-xl bg-[#D4AF37] text-black hover:bg-[#D4AF37]/80 transition-all duration-300"
-              onClick={() => setIsPopupOpen(true)}
-            >
-              View New Arrival
-            </Button>
+            {isSmallScreen ? (
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full bg-[#D4AF37]/20 hover:bg-[#D4AF37]/40 text-[#D4AF37] transition-all duration-300"
+                onClick={() => setIsPopupOpen(true)}
+              >
+                <Sparkles className="w-6 h-6" />
+              </Button>
+            ) : (
+              <Button
+                variant="outline"
+                className="text-base sm:text-lg lg:text-lg px-5 sm:px-7 lg:px-8 py-2.5 sm:py-3 rounded-xl bg-[#D4AF37] text-black hover:bg-[#D4AF37]/80 transition-all duration-300"
+                onClick={() => setIsPopupOpen(true)}
+              >
+                View New Arrival
+              </Button>
+            )}
           </div>
         </div>
 
