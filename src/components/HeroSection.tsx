@@ -180,7 +180,7 @@ export const HeroSection = () => {
         </div>
 
         {/* Video for Mobile Screens */}
-        <div className="sm:hidden relative w-full mt-6">
+        <div className="sm:hidden relative w-full mt-10">
           <video
             ref={videoRef}
             src="/hero/hero-video.mp4"
