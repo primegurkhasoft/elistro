@@ -1,3 +1,4 @@
+
 import { Sparkles, X } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import { TypeAnimation } from "react-type-animation";
@@ -111,10 +112,10 @@ export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[30vh] sm:min-h-[80vh] lg:min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-[65vh] sm:min-h-[80vh] lg:min-h-screen flex flex-col sm:flex-row items-center overflow-hidden"
     >
-      {/* Background Video */}
-      <div className="absolute inset-0 w-full h-full">
+      {/* Background Video for Larger Screens */}
+      <div className="hidden sm:block absolute inset-0 w-full h-full">
         <video
           ref={videoRef}
           src="/hero/hero-video.mp4"
@@ -126,13 +127,13 @@ export const HeroSection = () => {
         />
       </div>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50 z-10" />
+      {/* Overlay for Larger Screens */}
+      <div className="hidden sm:block absolute inset-0 bg-black/50 z-10" />
 
       {/* Content */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-2 sm:px-6 lg:px-12 py-4 sm:py-12 lg:py-20 grid grid-cols-1 lg:grid-cols-2 items-center min-h-[65vh]">
-        {/* Left Content */}
-        <div className="max-w-md sm:max-w-xl space-y-4 sm:space-y-6 text-center sm:text-left mx-auto lg:mx-0">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-2 sm:px-6 lg:px-12 py-4 sm:py-12 lg:py-20 flex flex-col sm:grid sm:grid-cols-1 lg:grid-cols-2 items-center min-h-[65vh]">
+        {/* Text Content */}
+        <div className="max-w-md sm:max-w-xl space-y-4 sm:space-y-6 text-center sm:text-left mx-auto sm:mx-0">
           {/* Animated Text */}
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-[#D4AF37]/40 bg-black/40 backdrop-blur-md mt-2 sm:mt-4">
             <Sparkles className="w-4 h-4 text-[#D4AF37]" />
@@ -192,7 +193,21 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        {/* Right Side - Empty (for future use) */}
+        {/* Video for Mobile Screens */}
+        <div className="sm:hidden relative w-full mt-6">
+          <video
+            ref={videoRef}
+            src="/hero/hero-video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-auto aspect-video object-cover rounded-lg"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+
+        {/* Right Side - Empty (for future use on larger screens) */}
         <div className="hidden lg:block"></div>
       </div>
 
