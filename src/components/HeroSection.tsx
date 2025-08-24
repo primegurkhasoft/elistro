@@ -99,12 +99,16 @@ const NewArrivalPopup = ({
 
 export const HeroSection = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     setIsPopupOpen(true);
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 0.4; // Slower playback for both mobile and desktop
+    if (mobileVideoRef.current) {
+      mobileVideoRef.current.playbackRate = 0.4; // Slower playback for mobile
+    }
+    if (desktopVideoRef.current) {
+      desktopVideoRef.current.playbackRate = 0.4; // Slower playback for desktop
     }
   }, []);
 
@@ -116,7 +120,7 @@ export const HeroSection = () => {
       {/* Background Video for Larger Screens */}
       <div className="hidden sm:block absolute inset-0 w-full h-full">
         <video
-          ref={videoRef}
+          ref={desktopVideoRef}
           src="/hero/hero-video.mp4"
           autoPlay
           loop
@@ -180,9 +184,9 @@ export const HeroSection = () => {
         </div>
 
         {/* Video for Mobile Screens */}
-        <div className="sm:hidden relative w-full max-w-lg mx-auto mt-10">
+        <div className="sm:hidden relative w-full max-w-lg mx-auto mt-10 overflow-hidden rounded-lg">
           <video
-            ref={videoRef}
+            ref={mobileVideoRef}
             src="/hero/hero-video.mp4"
             autoPlay
             loop
@@ -190,7 +194,7 @@ export const HeroSection = () => {
             playsInline
             className="w-full h-auto aspect-[16/10] object-cover rounded-lg scale-110 min-h-[300px]"
           />
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
         {/* Right Side - Empty (for future use on larger screens) */}
