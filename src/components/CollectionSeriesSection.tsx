@@ -234,10 +234,10 @@ export const CollectionSeriesSection = () => {
               {trendingProductsData.map((product) => (
                 <Card 
                   key={product.id} 
-                  className="w-96 flex-shrink-0 snap-start rounded-2xl overflow-hidden bg-[#171717] border-none relative group shadow-md"
+                  className="w-96 flex-shrink-0 snap-start rounded-2xl overflow-hidden bg-[#171717] border-none relative group elegant-card transition-all duration-300"
                   data-animated="false"
                   style={{
-                    animation: 'premiumEntrance 0.8s ease-out forwards',
+                    animation: 'elegantEntrance 0.6s ease-out forwards',
                     animationDelay: '0s',
                     transformOrigin: 'center bottom',
                   }}
@@ -282,21 +282,25 @@ export const CollectionSeriesSection = () => {
             </Button>
             <style>
               {`
-                @keyframes premiumEntrance {
+                @keyframes elegantEntrance {
                   0% {
                     opacity: 0;
-                    transform: translateY(30px) scale(0.9);
+                    transform: translateY(20px) scale(0.95);
                     box-shadow: 0 0 0 rgba(0, 0, 0, 0);
                   }
                   100% {
                     opacity: 1;
                     transform: translateY(0) scale(1);
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
                   }
                 }
-                .group:hover {
-                  transform: scale(1.03);
-                  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+                .elegant-card {
+                  padding: 1.5rem;
+                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                }
+                .group:hover .elegant-card {
+                  transform: scale(1.05);
+                  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
                   transition: all 0.3s ease-in-out;
                 }
                 .scrollbar-hide::-webkit-scrollbar {
@@ -336,10 +340,10 @@ export const CollectionSeriesSection = () => {
                 {displayedCollections.map((collection) => (
                   <Card 
                     key={collection.id} 
-                    className="w-96 flex-shrink-0 snap-start rounded-2xl overflow-hidden bg-white border-none relative group"
+                    className="w-96 flex-shrink-0 snap-start rounded-2xl overflow-hidden bg-[#171717] border-none relative group elegant-card transition-all duration-300"
                     data-animated="false"
                     style={{
-                      animation: 'premiumEntrance 0.8s ease-out forwards',
+                      animation: 'elegantEntrance 0.6s ease-out forwards',
                       animationDelay: '0s',
                       transformOrigin: 'center bottom',
                     }}
@@ -354,7 +358,7 @@ export const CollectionSeriesSection = () => {
                       <div className="absolute inset-0 pointer-events-none overflow-hidden">
                         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 translate-x-[-150%] group-hover:translate-x-[150%]"></div>
                       </div>
-                      <div className="bg-white p-8 flex items-center justify-center h-[75%] relative">
+                      <div className="bg-[#171717] h-[75%] flex items-center justify-center p-8 relative">
                         <img 
                           src={collection.image}
                           alt={collection.name}
@@ -370,7 +374,7 @@ export const CollectionSeriesSection = () => {
                           </span>
                         </div>
                       </div>
-                      <div className="bg-black h-[25%] p-4 text-center">
+                      <div className="bg-[#171717] h-[25%] p-4 text-center">
                         <h3 className="text-white text-lg font-semibold">
                           {collection.name}
                         </h3>
@@ -391,21 +395,25 @@ export const CollectionSeriesSection = () => {
               </Button>
               <style>
                 {`
-                  @keyframes premiumEntrance {
+                  @keyframes elegantEntrance {
                     0% {
                       opacity: 0;
-                      transform: translateY(30px) scale(0.9);
+                      transform: translateY(20px) scale(0.95);
                       box-shadow: 0 0 0 rgba(0, 0, 0, 0);
                     }
                     100% {
                       opacity: 1;
                       transform: translateY(0) scale(1);
-                      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
                     }
                   }
-                  .group:hover {
-                    transform: scale(1.03);
-                    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+                  .elegant-card {
+                    padding: 1.5rem;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                  }
+                  .group:hover .elegant-card {
+                    transform: scale(1.05);
+                    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.2);
                     transition: all 0.3s ease-in-out;
                   }
                   .scrollbar-hide::-webkit-scrollbar {
