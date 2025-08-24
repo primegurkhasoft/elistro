@@ -104,7 +104,7 @@ export const HeroSection = () => {
   useEffect(() => {
     setIsPopupOpen(true);
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.6; // Slow motion background
+      videoRef.current.playbackRate = 0.4; // Slower playback for both mobile and desktop
     }
   }, []);
 
@@ -180,7 +180,7 @@ export const HeroSection = () => {
         </div>
 
         {/* Video for Mobile Screens */}
-        <div className="sm:hidden relative w-full mt-10">
+        <div className="sm:hidden relative w-full max-w-lg mx-auto mt-10">
           <video
             ref={videoRef}
             src="/hero/hero-video.mp4"
@@ -188,7 +188,7 @@ export const HeroSection = () => {
             loop
             muted
             playsInline
-            className="w-full h-auto aspect-video object-cover rounded-lg"
+            className="w-full h-auto aspect-video object-cover rounded-lg scale-110"
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
