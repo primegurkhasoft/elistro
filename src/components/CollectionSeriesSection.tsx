@@ -234,7 +234,7 @@ export const CollectionSeriesSection = () => {
               {trendingProductsData.map((product) => (
                 <Card 
                   key={product.id} 
-                  className="w-96 flex-shrink-0 snap-start rounded-2xl overflow-hidden bg-[#1A2525] border-none relative group shadow-md"
+                  className="w-96 flex-shrink-0 snap-start rounded-2xl overflow-hidden bg-[#171717] border-none relative group shadow-md"
                   data-animated="false"
                   style={{
                     animation: 'premiumEntrance 0.8s ease-out forwards',
@@ -247,7 +247,7 @@ export const CollectionSeriesSection = () => {
                     <div className="absolute inset-0 pointer-events-none overflow-hidden">
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 translate-x-[-150%] group-hover:translate-x-[150%]"></div>
                     </div>
-                    <div className="bg-[#1A2525] h-[85%] flex items-center justify-center p-4 relative">
+                    <div className="bg-[#171717] h-[85%] flex items-center justify-center p-4 relative">
                       <img 
                         src={product.image}
                         alt={product.name}
@@ -264,7 +264,7 @@ export const CollectionSeriesSection = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="bg-[#1A2525] h-[15%] p-4 text-center flex flex-col justify-center">
+                    <div className="bg-[#171717] h-[15%] p-4 text-center flex flex-col justify-center">
                       <h3 className="text-white text-lg font-semibold">
                         {product.name}
                       </h3>
