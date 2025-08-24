@@ -188,7 +188,7 @@ export const HeroSection = () => {
             loop
             muted
             playsInline
-            className="w-full h-auto aspect-video object-cover rounded-lg scale-110"
+            className="w-full h-auto aspect-[16/10] object-cover rounded-lg scale-110 min-h-[300px]"
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
