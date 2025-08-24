@@ -111,7 +111,7 @@ export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[70vh] sm:min-h-[80vh] lg:min-h-screen flex flex-col sm:flex-row items-center overflow-hidden pt-16 sm:pt-20 lg:pt-24"
+      className="relative min-h-[90vh] sm:min-h-[80vh] lg:min-h-screen flex flex-col sm:flex-row items-center overflow-hidden pt-16 sm:pt-20 lg:pt-24"
     >
       {/* Background Video for Larger Screens */}
       <div className="hidden sm:block absolute inset-0 w-full h-full">
