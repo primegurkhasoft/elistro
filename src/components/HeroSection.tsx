@@ -111,7 +111,7 @@ export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[65vh] sm:min-h-[80vh] lg:min-h-screen flex flex-col sm:flex-row items-center overflow-hidden"
+      className="relative min-h-[70vh] sm:min-h-[80vh] lg:min-h-screen flex flex-col sm:flex-row items-center overflow-hidden pt-16 sm:pt-20 lg:pt-24"
     >
       {/* Background Video for Larger Screens */}
       <div className="hidden sm:block absolute inset-0 w-full h-full">
@@ -130,12 +130,12 @@ export const HeroSection = () => {
       <div className="hidden sm:block absolute inset-0 bg-black/50 z-10" />
 
       {/* Content */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-2 sm:px-6 lg:px-12 py-4 sm:py-12 lg:py-20 flex flex-col sm:grid sm:grid-cols-1 lg:grid-cols-2 items-center min-h-[65vh]">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12 lg:py-16 flex flex-col sm:grid sm:grid-cols-1 lg:grid-cols-2 items-center min-h-[60vh]">
         {/* Text Content */}
         <div className="max-w-md sm:max-w-xl space-y-4 sm:space-y-6 text-center sm:text-left mx-auto sm:mx-0">
           {/* Animated Text */}
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-[#D4AF37]/40 bg-black/40 backdrop-blur-md mt-2 sm:mt-4">
-            <Sparkles className="w-4 h-4 text-[#D4AF37]" />
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-[#D4AF37]/40 bg-black/40 backdrop-blur-md mt-4 sm:mt-6">
+            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-[#D4AF37]" />
             <span className="text-sm sm:text-base font-medium text-[#D4AF37]">
               <TypeAnimation
                 sequence={[
@@ -167,11 +167,11 @@ export const HeroSection = () => {
             Elistro brings you international eyewear luxury — where precision, innovation, and style meet timeless sophistication.
           </p>
 
-          {/* Button/Icon */}
+          {/* Button */}
           <div className="mt-4 sm:mt-6">
             <Button
               variant="outline"
-              className="text-base sm:text-lg lg:text-lg px-5 sm:px-7 lg:px-8 py-2.5 sm:py-3 rounded-xl bg-[#D4AF37] text-black hover:bg-[#D4AF37]/80 transition-all duration-300 sm:bg-[#D4AF37] sm:text-black sm:hover:bg-[#D4AF37]/80"
+              className="text-base sm:text-lg lg:text-lg px-5 sm:px-7 lg:px-8 py-2.5 sm:py-3 rounded-xl bg-[#D4AF37] text-black hover:bg-[#D4AF37]/80 transition-all duration-300"
               onClick={() => setIsPopupOpen(true)}
             >
               View New Arrival
