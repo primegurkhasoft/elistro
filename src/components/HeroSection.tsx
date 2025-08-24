@@ -100,7 +100,6 @@ const NewArrivalPopup = ({
 export const HeroSection = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const isSmallScreen = window.innerWidth < 640; // Tailwind's 'sm' breakpoint is 640px
 
   useEffect(() => {
     setIsPopupOpen(true);
@@ -157,39 +156,26 @@ export const HeroSection = () => {
 
           {/* Headings */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-white leading-snug sm:leading-tight tracking-tight drop-shadow-md">
-            {isSmallScreen ? "Elegant Craft" : "Crafted Elegance"}
+            Crafted Elegance
           </h1>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-[#D4AF37] leading-snug sm:leading-tight tracking-tight drop-shadow-md">
-            {isSmallScreen ? "Vision Redefined" : "Redefining Vision"}
+            Redefining Vision
           </h2>
 
           {/* Subtext */}
           <p className="text-base sm:text-lg lg:text-lg text-white/90 font-medium sm:font-normal max-w-lg mx-auto sm:mx-0 leading-relaxed drop-shadow">
-            {isSmallScreen
-              ? "Elistro: Luxury eyewear with precision and style."
-              : "Elistro brings you international eyewear luxury — where precision, innovation, and style meet timeless sophistication."}
+            Elistro brings you international eyewear luxury — where precision, innovation, and style meet timeless sophistication.
           </p>
 
           {/* Button/Icon */}
           <div className="mt-4 sm:mt-6">
-            {isSmallScreen ? (
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full bg-[#D4AF37]/20 hover:bg-[#D4AF37]/40 text-[#D4AF37] transition-all duration-300"
-                onClick={() => setIsPopupOpen(true)}
-              >
-                <Sparkles className="w-6 h-6" />
-              </Button>
-            ) : (
-              <Button
-                variant="outline"
-                className="text-base sm:text-lg lg:text-lg px-5 sm:px-7 lg:px-8 py-2.5 sm:py-3 rounded-xl bg-[#D4AF37] text-black hover:bg-[#D4AF37]/80 transition-all duration-300"
-                onClick={() => setIsPopupOpen(true)}
-              >
-                View New Arrival
-              </Button>
-            )}
+            <Button
+              variant="outline"
+              className="text-base sm:text-lg lg:text-lg px-5 sm:px-7 lg:px-8 py-2.5 sm:py-3 rounded-xl bg-[#D4AF37] text-black hover:bg-[#D4AF37]/80 transition-all duration-300 sm:bg-[#D4AF37] sm:text-black sm:hover:bg-[#D4AF37]/80"
+              onClick={() => setIsPopupOpen(true)}
+            >
+              View New Arrival
+            </Button>
           </div>
         </div>
 
