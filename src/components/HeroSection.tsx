@@ -184,7 +184,7 @@ export const HeroSection = () => {
         </div>
 
         {/* Video for Mobile Screens */}
-        <div className="sm:hidden relative w-full max-w-lg mx-auto mt-10 overflow-hidden rounded-lg">
+        <div className="sm:hidden relative w-full mx-auto mt-10 overflow-hidden rounded-lg p-2 border border-[#D4AF37]/20">
           <video
             ref={mobileVideoRef}
             src="/hero/hero-video.mp4"
@@ -192,7 +192,7 @@ export const HeroSection = () => {
             loop
             muted
             playsInline
-            className="w-full h-auto aspect-[16/10] object-cover rounded-lg scale-110 min-h-[300px]"
+            className="w-full h-auto aspect-[16/10] object-contain rounded-lg min-h-[300px]"
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
